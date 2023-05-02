@@ -1,5 +1,16 @@
 Install terraform https://www.ntweekly.com/2021/09/15/upgrade-terraform-on-ubuntu-linux/
 
+
+sudo wget https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_386.zip
+
+unzip terraform_1.4.6_linux_386.zip 
+
+terraform --version
+
+sudo mv terraform /usr/local/bin/
+
+terraform --version
+
 Create service account: https://blog.avenuecode.com/how-to-use-terraform-to-create-a-virtual-machine-in-google-cloud-platform
 --------------------------------------------------------------------------------------------------------------------------------
 
