@@ -11,17 +11,22 @@ sudo mv terraform /usr/local/bin/
 
 terraform --version
 
+
+
 Create service account: https://blog.avenuecode.com/how-to-use-terraform-to-create-a-virtual-machine-in-google-cloud-platform
 --------------------------------------------------------------------------------------------------------------------------------
+
+
 
 create provider.tf file
 ---------------------------
 
 provider "google" {
- credentials = file("credentials.json")
- project     = "ferrous-syntax-348017"
- region      = "us-central1-a"
-}
+ credentials = file("cred.json")
+ project     = "groovy-camera-382616"
+ region      = "us-central1-c"
+ }
+
 
 create main.tf 
 -------------------
@@ -30,7 +35,7 @@ create main.tf
 resource "google_compute_instance" "default" {
   name         = "terraform-vm"
   machine_type = "f1-micro"
-  zone         = "us-central1-a"
+  zone         = "us-central1-c"
   tags         = ["ssh"]
 
   metadata = {
@@ -38,7 +43,7 @@ resource "google_compute_instance" "default" {
   }
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "ubuntu-1804-lts"
     }
   }
 
